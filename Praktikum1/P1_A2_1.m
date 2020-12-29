@@ -16,8 +16,9 @@ hh = fir1(n,Wn,ftype,kaiser(n+1,beta),'noscale');
 
 % 4. Ploten Sie den Amplitudengang des Filters (Funktion freqz), NST-PSTPlan (zplane) und analysieren Sie, 
 % ob die Anforderungen erfüllt sind (Detaildarstellung für Durchlasbereich und Sperrbereich).
-figure; freqz(hh,1,1024,fsamp);
-figure; zplane(hh,1)%Hier ist der Problem
+freqz(hh,1,1024,fsamp);
+figure; zplane(hh,1);%Hier ist der Problem
+
 
 % 5. Filtern sie das Testsignal mit dem entworfenen Filter und Matlab-Funktion
 % y=filter(b,a,x) und stellen Sie den Amplitudengang jY (ejΩ)j des Signals y(n) dar.
@@ -28,7 +29,7 @@ T_s = 0.25;
 f_a = 8000;
 t = 8 * T_s;
 N = t * f_a;
-[ x, fs, marks, cf ] = signal_src(4); 
+figure;[ x, fs, marks, cf ] = signal_src(4); 
 y = filter(hh,1,x);
 Y = fft(y);
 Y_0 = log10(abs(Y / sqrt(length(Y))));% Verticale Punkten
