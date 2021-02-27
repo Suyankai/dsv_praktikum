@@ -6,7 +6,7 @@ f_a = 8000;
 f_0 = 697;
 T1 = 0.04;
 T2 = 8000 * 1 / f_a; %7(d)
-N = T1 * f_a;% change here!
+N = T2 * f_a;% change here!
 x = zeros(1,N);
 x(1) = 1;
 

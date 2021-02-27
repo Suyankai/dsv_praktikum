@@ -39,7 +39,7 @@ y0min = filter(B0,A0,xmin);
 y1min = filter(B1,A1,xmin);
 ymin = y0min + y1min;
 Ymin = abs(fft(ymin));
-W = 2*(0:Nmin-1)/Nmin; stem(W,Ymin);xlabel('\Omega/\pi');ylabel('|Y(e^{j\Omega})|');title('Ymin');
+W = 2*(0:Nmin-1)/Nmin; stem(W,Ymin);xlabel('\Omega/\pi');ylabel('|Y(e^{j\Omega})|');title('Y(N = Nmin)');
 subplot(3,1,3);
 Nmax = 128;
 xmax = zeros(1,Nmax);
@@ -48,7 +48,7 @@ y0max = filter(B0,A0,xmax);
 y1max = filter(B1,A1,xmax);
 ymax = y0max + y1max;
 Ymax = abs(fft(ymax)); 
-W = 2*(0:Nmax-1)/Nmax; stem(W,Ymax);xlabel('\Omega/\pi');ylabel('|Y(e^{j\Omega})|');title('Ymax');
+W = 2*(0:Nmax-1)/Nmax; stem(W,Ymax);xlabel('\Omega/\pi');ylabel('|Y(e^{j\Omega})|');title('Y(N = Nmax)');
 
 % 4.(a) Berechnen und darstellen Sie den Amplitudengang des Blackmanfensters ( w=blackman(...) )
 w = blackman(N);
